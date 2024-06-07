@@ -11,18 +11,14 @@ Clona este repositorio en tu máquina local.
 Instala las dependencias utilizando el siguiente comando:
 npm install
 API Key de OpenWeatherMap en la siguiente variable:
-makefile
-Copy code
-REACT_APP_API_KEY=your_api_key_here
-Uso
-Una vez que hayas instalado las dependencias y configurado tu API Key, puedes ejecutar la aplicación utilizando el siguiente comando:
 
-sql
-Copy code
+REACT_APP_API_KEY=your_api_key_here
+# Uso
+Una vez que hayas instalado las dependencias y configurado tu API Key, puedes ejecutar la aplicación utilizando el siguiente comando:
 npm start
 Esto iniciará la aplicación en tu navegador web predeterminado.
 
-Tecnologías Utilizadas
+# Tecnologías Utilizadas
 React.js
 Chart.js
 Axios
@@ -30,10 +26,7 @@ Contribución
 Las contribuciones son bienvenidas. Si tienes sugerencias de mejoras, por favor abre un issue para discutirlas antes de enviar un pull request.
 
 Licencia
-Este proyecto está bajo la Licencia MIT.
-
-
-
+Este proyecto está bajo la Licencia MIT Luis Fernando Alonso Brujes.
 
 
 # Getting Started with Create React App
