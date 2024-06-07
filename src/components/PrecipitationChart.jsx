@@ -12,7 +12,7 @@ import {
     Legend
 } from 'chart.js';
 
-// Registrar los componentes necesarios
+// Registrar los componentes necesarios para Chart.js
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -24,7 +24,9 @@ ChartJS.register(
     Legend
 );
 
+// Componente funcional para mostrar el gráfico de precipitación
 const PrecipitationChart = ({ weatherForecast }) => {
+    // Verifica si hay datos de pronóstico del tiempo disponibles
     if (!weatherForecast) return <div>Loading...</div>;
 
     // Filtrar los datos para los próximos 5 días
@@ -54,6 +56,7 @@ const PrecipitationChart = ({ weatherForecast }) => {
         ],
     };
 
+    // Opciones del gráfico
     const options = {
         scales: {
             x: {

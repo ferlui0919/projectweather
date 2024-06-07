@@ -2,7 +2,9 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import '../css/AirPollutionChart.css'; // Importa el archivo CSS
 
+// Componente funcional para mostrar el gráfico de contaminación del aire
 const AirPollutionChart = ({ airPollution }) => {
+    // Verifica si hay datos de contaminación del aire disponibles
     if (!airPollution) return <div>Loading...</div>;
 
     // Filtrar los datos para mostrar solo los últimos 90 días
@@ -23,6 +25,7 @@ const AirPollutionChart = ({ airPollution }) => {
         ],
     };
 
+    // Opciones del gráfico
     const options = {
         scales: {
             x: {

@@ -16,6 +16,7 @@ const ModalMessage = ({ isOpen, onRequestClose }) => (
         className="modal"
         overlayClassName="overlay"
     >
+        {/* Mensaje para solicitar permiso de ubicación */}
         <h2>Permitir Acceso a la Ubicación</h2>
         <p>Por favor, permita el acceso a su ubicación para mostrar los datos meteorológicos correspondientes.</p>
     </Modal>
@@ -32,44 +33,54 @@ const App = () => {
     const [modalIsOpen, setModalIsOpen] = useState(true); // Estado para controlar la apertura del modal
 
     useEffect(() => {
+        // Función asincrónica para obtener datos meteorológicos
         const fetchWeatherData = async () => {
-            if (location) {
+            if (location) { // Verifica si la ubicación está disponible
                 try {
                     setLoading(true); // Iniciar el estado de carga
+                    // Obtener datos actuales del clima, pronóstico y contaminación del aire
                     const current = await getCurrentWeather(location.lat, location.lon);
                     const forecast = await getWeatherForecast(location.lat, location.lon);
                     const airPollutionData = await getAirPollution(location.lat, location.lon);
 
-                    // Verifica la respuesta de la API en la consola
+                    // Log de los datos obtenidos en la consola para depuración
                     console.log('Current Weather:', current);
                     console.log('Weather Forecast:', forecast);
                     console.log('Air Pollution:', airPollutionData);
 
+                    // Actualizar estados con los datos obtenidos
                     setCurrentWeather(current);
                     setWeatherForecast(forecast);
                     setAirPollution(airPollutionData);
                     setLoading(false); // Finalizar el estado de carga
-                } catch (err) {
+                } catch (err) { // Manejo de errores en caso de falla en las solicitudes
                     setError(err.message);
                     setLoading(false); // Finalizar el estado de carga en caso de error
                 }
             }
         };
 
-        fetchWeatherData();
-    }, [location]);
+        fetchWeatherData(); // Llamada a la función para obtener datos meteorológicos
+    }, [location]); // Se ejecuta cuando la ubicación cambia
 
+    // Manejo de casos de error, carga y ubicación no disponible
     if (locationError) return <div>Error: {locationError}</div>;
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
+    // Renderizado de componentes de la aplicación con datos meteorológicos
     return (
         <div className="App">
+            {/* Título de la aplicación */}
             <h1>Weather Dashboard</h1>
+            {/* Componente para mostrar el gráfico de contaminación del aire */}
             <AirPollutionChart airPollution={airPollution} />
+            {/* Componente para mostrar el gráfico de precipitación */}
             <PrecipitationChart weatherForecast={weatherForecast} />
+            {/* Componente para mostrar la tabla de datos meteorológicos actuales */}
             <WeatherTable currentWeather={currentWeather} />
-            <ModalMessage isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} /> {/* Renderiza el modal */}
+            {/* Renderiza el modal para solicitar permiso de ubicación */}
+            <ModalMessage isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} />
         </div>
     );
 };

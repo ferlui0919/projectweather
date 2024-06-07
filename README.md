@@ -1,3 +1,41 @@
+# Weather Dashboard
+Este es un tablero meteorológico interactivo que muestra datos meteorológicos en tiempo real, pronósticos futuros y niveles de contaminación del aire para una ubicación específica.
+
+# Funcionalidades
+Muestra el clima actual, incluyendo temperatura, humedad, presión y velocidad del viento.
+Pronóstico del tiempo para los próximos 5 días.
+Gráfico de contaminación del aire que muestra el Índice de Calidad del Aire (AQI) durante los últimos 3 meses.
+
+# Instalación
+Clona este repositorio en tu máquina local.
+Instala las dependencias utilizando el siguiente comando:
+npm install
+API Key de OpenWeatherMap en la siguiente variable:
+makefile
+Copy code
+REACT_APP_API_KEY=your_api_key_here
+Uso
+Una vez que hayas instalado las dependencias y configurado tu API Key, puedes ejecutar la aplicación utilizando el siguiente comando:
+
+sql
+Copy code
+npm start
+Esto iniciará la aplicación en tu navegador web predeterminado.
+
+Tecnologías Utilizadas
+React.js
+Chart.js
+Axios
+Contribución
+Las contribuciones son bienvenidas. Si tienes sugerencias de mejoras, por favor abre un issue para discutirlas antes de enviar un pull request.
+
+Licencia
+Este proyecto está bajo la Licencia MIT.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
