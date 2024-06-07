@@ -1,0 +1,29 @@
+.weather-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.weather-table th, .weather-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.weather-table th {
+    background-color: #f2f2f2;
+}
+
+.weather-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.weather-table tbody tr:hover {
+    background-color: #ddd;
+}
+.weather-table {
+    width: 80%; /* Ancho de la tabla */
+    margin: 0 auto; /* Centrar horizontalmente */
+    border-collapse: collapse;
+    margin-top: 20px;
+}

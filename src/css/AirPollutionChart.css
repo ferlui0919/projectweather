@@ -1,0 +1,44 @@
+/* AirPollutionChart.css */
+
+.air-pollution-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.air-pollution-info {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.air-pollution-info h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.air-pollution-info ul {
+    text-align: left;
+    padding-left: 20px;
+    color: #555;
+}
+
+.air-pollution-info li {
+    margin-bottom: 5px;
+}
+
+.air-pollution-info li::before {
+    content: "•";
+    color: #4CAF50;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.air-pollution-info li:last-child {
+    margin-bottom: 0;
+}
